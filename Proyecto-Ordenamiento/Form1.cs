@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Linq;
 
 namespace Proyecto_Ordenamiento
 {
     public partial class Form1 : Form
     {
 
-        private string[] datos;
+        private int[] datos;
         private readonly Random rnd = new Random();
+        
 
 
         public Form1()
@@ -30,25 +26,29 @@ namespace Proyecto_Ordenamiento
             lblTimeMerge.Text = "Tiempo Merge: ";
             lblTimeJump.Text = "Tiempo Jump: ";
             lblTimeInterpol.Text = "Tiempo Interpolation: ";
-
+            
+            
         }
+
+
+        
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
 
             int n = int.Parse(cmbTamano.SelectedItem.ToString());
 
-            Stopwatch total = Stopwatch.StartNew();
+           
             Stopwatch swGen = Stopwatch.StartNew();
 
-            datos = GetPalabrasR(n, 5, 10);
+            datos = GetPalabrasR(n, 1, 1_000_000);
 
-            swGen.Stop();
             MostrarV(datos);
 
-            total.Stop();
+            swGen.Stop();
 
-            lblTiempoGenerar.Text = $"Tiempo generar: {swGen.ElapsedMilliseconds / 1000} ms";
+
+            lblTiempoGenerar.Text = $"Tiempo generar: {swGen.ElapsedMilliseconds} ms";
 
 
             lblTimeSelection.Text = "Tiempo Selection: ";
@@ -60,23 +60,29 @@ namespace Proyecto_Ordenamiento
         }
 
 
-        private string[] GetPalabrasR(int cantidad, int minLen, int maxLen)
+        private int[] GetPalabrasR(int cantidad, int min, int max)
         {
 
-            string[] arr = new string[cantidad];
+
+            int[] arr = new int[cantidad];
             for (int i = 0; i < cantidad; i++)
             {
-                int len = rnd.Next(minLen, maxLen + 1);
-                char[] chars = new char[len];
-                for (int j = 0; j < len; j++)
-                {
-                    chars[j] = (char)rnd.Next('a', 'z' + 1);
-                }
-                arr[i] = new string(chars);
+                arr[i] = rnd.Next(min, max + 1);
             }
             return arr;
 
+        }
 
+        private void MostrarV(int[] arr)
+        {
+            lbVista.Items.Clear();
+            if (arr == null) return;
+
+           
+            for (int i = 0; i < arr.Length; i++)
+            {
+                lbVista.Items.Add($"{i}: {arr[i]}");
+            }
         }
     }
 }

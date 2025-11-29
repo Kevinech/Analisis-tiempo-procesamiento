@@ -9,3 +9,4 @@ C:\Users\inmo\Desktop\ProgramacionEstructurada\Proyecto-Ordenamiento\Proyecto-Or
 C:\Users\inmo\Desktop\ProgramacionEstructurada\Proyecto-Ordenamiento\Proyecto-Ordenamiento\obj\Debug\Proyecto-Ordenamiento.exe
 C:\Users\inmo\Desktop\ProgramacionEstructurada\Proyecto-Ordenamiento\Proyecto-Ordenamiento\obj\Debug\Proyecto-Ordenamiento.pdb
 C:\Users\inmo\Desktop\ProgramacionEstructurada\Proyecto-Ordenamiento\Proyecto-Ordenamiento\obj\Debug\Proyecto-Ordenamiento.exe.config
+C:\Users\inmo\Desktop\ProgramacionEstructurada\Proyecto-Ordenamiento\Proyecto-Ordenamiento\bin\Debug\Datos\Diccionario.txt
