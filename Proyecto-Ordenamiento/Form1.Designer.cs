@@ -29,21 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbTamano = new System.Windows.Forms.ComboBox();
             this.btnGenerar = new System.Windows.Forms.Button();
+            this.cmbTamano = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnSelectionSort = new System.Windows.Forms.Button();
-            this.lblTimeSelection = new System.Windows.Forms.Label();
-            this.btnMergeSort = new System.Windows.Forms.Button();
             this.lblTimeMerge = new System.Windows.Forms.Label();
+            this.btnMergeSort = new System.Windows.Forms.Button();
+            this.lblTimeSelection = new System.Windows.Forms.Label();
+            this.btnSelectionSort = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lbVista = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.tbBuscar = new System.Windows.Forms.TextBox();
-            this.btnJumpSearch = new System.Windows.Forms.Button();
-            this.btnInterpolSearch = new System.Windows.Forms.Button();
-            this.lblTimeJump = new System.Windows.Forms.Label();
             this.lblTimeInterpol = new System.Windows.Forms.Label();
+            this.lblTimeJump = new System.Windows.Forms.Label();
+            this.btnInterpolSearch = new System.Windows.Forms.Button();
+            this.btnJumpSearch = new System.Windows.Forms.Button();
+            this.tbBuscar = new System.Windows.Forms.TextBox();
+            this.lblTiempoGenerar = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -52,6 +53,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblTiempoGenerar);
             this.groupBox1.Controls.Add(this.btnGenerar);
             this.groupBox1.Controls.Add(this.cmbTamano);
             this.groupBox1.Location = new System.Drawing.Point(16, 2);
@@ -63,23 +65,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tamaño de datos";
             // 
+            // btnGenerar
+            // 
+            this.btnGenerar.Location = new System.Drawing.Point(580, 16);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(153, 28);
+            this.btnGenerar.TabIndex = 1;
+            this.btnGenerar.Text = "Generar palabras";
+            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+            // 
             // cmbTamano
             // 
             this.cmbTamano.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTamano.FormattingEnabled = true;
-            this.cmbTamano.Location = new System.Drawing.Point(331, 21);
+            this.cmbTamano.Location = new System.Drawing.Point(331, 16);
             this.cmbTamano.Name = "cmbTamano";
             this.cmbTamano.Size = new System.Drawing.Size(189, 28);
             this.cmbTamano.TabIndex = 0;
-            // 
-            // btnGenerar
-            // 
-            this.btnGenerar.Location = new System.Drawing.Point(580, 21);
-            this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(153, 28);
-            this.btnGenerar.TabIndex = 1;
-            this.btnGenerar.Text = "Generar números";
-            this.btnGenerar.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -94,23 +97,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ordenamientos";
             // 
-            // btnSelectionSort
+            // lblTimeMerge
             // 
-            this.btnSelectionSort.Location = new System.Drawing.Point(6, 27);
-            this.btnSelectionSort.Name = "btnSelectionSort";
-            this.btnSelectionSort.Size = new System.Drawing.Size(158, 27);
-            this.btnSelectionSort.TabIndex = 0;
-            this.btnSelectionSort.Text = "Selection Sort";
-            this.btnSelectionSort.UseVisualStyleBackColor = true;
-            // 
-            // lblTimeSelection
-            // 
-            this.lblTimeSelection.AutoSize = true;
-            this.lblTimeSelection.Location = new System.Drawing.Point(51, 62);
-            this.lblTimeSelection.Name = "lblTimeSelection";
-            this.lblTimeSelection.Size = new System.Drawing.Size(51, 20);
-            this.lblTimeSelection.TabIndex = 1;
-            this.lblTimeSelection.Text = "label1";
+            this.lblTimeMerge.AutoSize = true;
+            this.lblTimeMerge.Location = new System.Drawing.Point(380, 62);
+            this.lblTimeMerge.Name = "lblTimeMerge";
+            this.lblTimeMerge.Size = new System.Drawing.Size(103, 20);
+            this.lblTimeMerge.TabIndex = 3;
+            this.lblTimeMerge.Text = "lblTimeMerge";
             // 
             // btnMergeSort
             // 
@@ -121,14 +115,23 @@
             this.btnMergeSort.Text = "Merge Sort";
             this.btnMergeSort.UseVisualStyleBackColor = true;
             // 
-            // lblTimeMerge
+            // lblTimeSelection
             // 
-            this.lblTimeMerge.AutoSize = true;
-            this.lblTimeMerge.Location = new System.Drawing.Point(380, 62);
-            this.lblTimeMerge.Name = "lblTimeMerge";
-            this.lblTimeMerge.Size = new System.Drawing.Size(51, 20);
-            this.lblTimeMerge.TabIndex = 3;
-            this.lblTimeMerge.Text = "label1";
+            this.lblTimeSelection.AutoSize = true;
+            this.lblTimeSelection.Location = new System.Drawing.Point(51, 62);
+            this.lblTimeSelection.Name = "lblTimeSelection";
+            this.lblTimeSelection.Size = new System.Drawing.Size(124, 20);
+            this.lblTimeSelection.TabIndex = 1;
+            this.lblTimeSelection.Text = "lblTimeSelection";
+            // 
+            // btnSelectionSort
+            // 
+            this.btnSelectionSort.Location = new System.Drawing.Point(6, 27);
+            this.btnSelectionSort.Name = "btnSelectionSort";
+            this.btnSelectionSort.Size = new System.Drawing.Size(158, 27);
+            this.btnSelectionSort.TabIndex = 0;
+            this.btnSelectionSort.Text = "Selection Sort";
+            this.btnSelectionSort.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -163,21 +166,23 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Busquedas";
             // 
-            // tbBuscar
+            // lblTimeInterpol
             // 
-            this.tbBuscar.Location = new System.Drawing.Point(89, 45);
-            this.tbBuscar.Name = "tbBuscar";
-            this.tbBuscar.Size = new System.Drawing.Size(291, 26);
-            this.tbBuscar.TabIndex = 0;
+            this.lblTimeInterpol.AutoSize = true;
+            this.lblTimeInterpol.Location = new System.Drawing.Point(348, 138);
+            this.lblTimeInterpol.Name = "lblTimeInterpol";
+            this.lblTimeInterpol.Size = new System.Drawing.Size(112, 20);
+            this.lblTimeInterpol.TabIndex = 4;
+            this.lblTimeInterpol.Text = "lblTimeInterpol";
             // 
-            // btnJumpSearch
+            // lblTimeJump
             // 
-            this.btnJumpSearch.Location = new System.Drawing.Point(29, 88);
-            this.btnJumpSearch.Name = "btnJumpSearch";
-            this.btnJumpSearch.Size = new System.Drawing.Size(155, 29);
-            this.btnJumpSearch.TabIndex = 1;
-            this.btnJumpSearch.Text = "Jump Search";
-            this.btnJumpSearch.UseVisualStyleBackColor = true;
+            this.lblTimeJump.AutoSize = true;
+            this.lblTimeJump.Location = new System.Drawing.Point(85, 138);
+            this.lblTimeJump.Name = "lblTimeJump";
+            this.lblTimeJump.Size = new System.Drawing.Size(97, 20);
+            this.lblTimeJump.TabIndex = 3;
+            this.lblTimeJump.Text = "lblTimeJump";
             // 
             // btnInterpolSearch
             // 
@@ -188,23 +193,31 @@
             this.btnInterpolSearch.Text = "Interpol Search";
             this.btnInterpolSearch.UseVisualStyleBackColor = true;
             // 
-            // lblTimeJump
+            // btnJumpSearch
             // 
-            this.lblTimeJump.AutoSize = true;
-            this.lblTimeJump.Location = new System.Drawing.Point(85, 138);
-            this.lblTimeJump.Name = "lblTimeJump";
-            this.lblTimeJump.Size = new System.Drawing.Size(51, 20);
-            this.lblTimeJump.TabIndex = 3;
-            this.lblTimeJump.Text = "label1";
+            this.btnJumpSearch.Location = new System.Drawing.Point(29, 88);
+            this.btnJumpSearch.Name = "btnJumpSearch";
+            this.btnJumpSearch.Size = new System.Drawing.Size(155, 29);
+            this.btnJumpSearch.TabIndex = 1;
+            this.btnJumpSearch.Text = "Jump Search";
+            this.btnJumpSearch.UseVisualStyleBackColor = true;
             // 
-            // lblTimeInterpol
+            // tbBuscar
             // 
-            this.lblTimeInterpol.AutoSize = true;
-            this.lblTimeInterpol.Location = new System.Drawing.Point(348, 138);
-            this.lblTimeInterpol.Name = "lblTimeInterpol";
-            this.lblTimeInterpol.Size = new System.Drawing.Size(51, 20);
-            this.lblTimeInterpol.TabIndex = 4;
-            this.lblTimeInterpol.Text = "label1";
+            this.tbBuscar.Location = new System.Drawing.Point(89, 45);
+            this.tbBuscar.MaxLength = 200;
+            this.tbBuscar.Name = "tbBuscar";
+            this.tbBuscar.Size = new System.Drawing.Size(291, 26);
+            this.tbBuscar.TabIndex = 0;
+            // 
+            // lblTiempoGenerar
+            // 
+            this.lblTiempoGenerar.AutoSize = true;
+            this.lblTiempoGenerar.Location = new System.Drawing.Point(809, 24);
+            this.lblTiempoGenerar.Name = "lblTiempoGenerar";
+            this.lblTiempoGenerar.Size = new System.Drawing.Size(135, 20);
+            this.lblTiempoGenerar.TabIndex = 2;
+            this.lblTiempoGenerar.Text = "lblTiempoGenerar";
             // 
             // Form1
             // 
@@ -221,6 +234,7 @@
             this.Name = "Form1";
             this.Text = "Ordenamientos";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -248,6 +262,7 @@
         private System.Windows.Forms.TextBox tbBuscar;
         private System.Windows.Forms.Label lblTimeInterpol;
         private System.Windows.Forms.Label lblTimeJump;
+        private System.Windows.Forms.Label lblTiempoGenerar;
     }
 }
 
