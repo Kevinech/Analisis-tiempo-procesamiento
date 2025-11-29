@@ -123,6 +123,7 @@
             this.btnMergeSort.TabIndex = 2;
             this.btnMergeSort.Text = "Merge Sort";
             this.btnMergeSort.UseVisualStyleBackColor = true;
+            this.btnMergeSort.Click += new System.EventHandler(this.btnMergeSort_Click);
             // 
             // lblTimeSelection
             // 

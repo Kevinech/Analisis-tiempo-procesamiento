@@ -18,17 +18,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 188,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\inmo\\Desktop\\ProgramacionEstructurada\\Proyecto-Ordenamiento\\Proyecto-Ordenamiento\\Form1.cs",
               "RelativeDocumentMoniker": "Proyecto-Ordenamiento\\Form1.cs",
-              "ToolTip": "C:\\Users\\inmo\\Desktop\\ProgramacionEstructurada\\Proyecto-Ordenamiento\\Proyecto-Ordenamiento\\Form1.cs",
-              "RelativeToolTip": "Proyecto-Ordenamiento\\Form1.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAswGcAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\inmo\\Desktop\\ProgramacionEstructurada\\Proyecto-Ordenamiento\\Proyecto-Ordenamiento\\Form1.cs*",
+              "RelativeToolTip": "Proyecto-Ordenamiento\\Form1.cs*",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBYAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-29T17:43:38.143Z",
               "EditorCaption": ""
@@ -39,8 +63,8 @@
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\inmo\\Desktop\\ProgramacionEstructurada\\Proyecto-Ordenamiento\\Proyecto-Ordenamiento\\Form1.cs",
               "RelativeDocumentMoniker": "Proyecto-Ordenamiento\\Form1.cs",
-              "ToolTip": "C:\\Users\\inmo\\Desktop\\ProgramacionEstructurada\\Proyecto-Ordenamiento\\Proyecto-Ordenamiento\\Form1.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Proyecto-Ordenamiento\\Form1.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\inmo\\Desktop\\ProgramacionEstructurada\\Proyecto-Ordenamiento\\Proyecto-Ordenamiento\\Form1.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "Proyecto-Ordenamiento\\Form1.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-29T17:26:27.279Z",
               "EditorCaption": " [Dise\u00F1o]"

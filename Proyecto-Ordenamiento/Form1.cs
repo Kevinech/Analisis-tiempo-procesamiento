@@ -20,7 +20,7 @@ namespace Proyecto_Ordenamiento
         {
             InitializeComponent();
 
-            cmbTamano.Items.AddRange(new object[] { "500000", "1000000", "5000000" });
+            cmbTamano.Items.AddRange(new object[] { "10000", "500000", "1000000", "5000000" });
             cmbTamano.SelectedIndex = 0;
 
             lblTiempoGenerar.Text = "Tiempo generar: ";
@@ -50,7 +50,7 @@ namespace Proyecto_Ordenamiento
             swGen.Stop();
 
 
-            lblTiempoGenerar.Text = $"Tiempo generar: {(swGen.ElapsedMilliseconds / 1000)} seg";
+            lblTiempoGenerar.Text = $"Tiempo generar: {swGen.ElapsedMilliseconds} ms";
 
 
             lblTimeSelection.Text = "Tiempo Selection: ";
@@ -77,39 +77,41 @@ namespace Proyecto_Ordenamiento
 
         private void MostrarV(int[] arr)
         {
+        
             lbVista.Items.Clear();
             if (arr == null) return;
 
-           
-            for (int i = 0; i < arr.Length; i++)
+            int max = Math.Min(arr.Length, 1000); 
+            for (int i = 0; i < max; i++)
             {
-                lbVista.Items.Add($"{arr[i]}");
+                lbVista.Items.Add(arr[i]);   
             }
         }
 
+        
+
         private void btnSelectionSort_Click(object sender, EventArgs e)
         {
-
-            
-
             if (datos == null)
             {
-                MessageBox.Show("Primero debe generar los números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Primero debe generar los números.");
                 return;
             }
-          
+
             int[] copia = (int[])datos.Clone();
 
             Stopwatch sw = Stopwatch.StartNew();
-            
             SelectionSort(copia);
+
+            bool ok = EstaOrdenado(copia);
+            MessageBox.Show(ok ? "Ordenado correctamente" : "Hay un error en el ordenamiento");
 
             datos = copia;
             MostrarV(datos);
 
             sw.Stop();
 
-            lblTimeSelection.Text = $"Tiempo Selection: {(sw.ElapsedMilliseconds / 1000)} seg";
+            lblTimeSelection.Text = $"Tiempo Selection: {sw.ElapsedMilliseconds} ms";
         }
 
         private void SelectionSort(int[] arr)
@@ -118,22 +120,76 @@ namespace Proyecto_Ordenamiento
 
             for (int i = 0; i < n - 1; i++)
             {
-                int minIndex = i;
+                int minIdx = i;
+
                 for (int j = i + 1; j < n; j++)
                 {
-                    if (arr[j] < arr[minIndex])
-                    {
-                        minIndex = j;
-                    }
+                    if (arr[j] < arr[minIdx])
+                        minIdx = j;
                 }
-                if (minIndex != i)
+
+                if (minIdx != i)
                 {
-                    int temp = arr[1];
-                    arr[1] = arr[minIndex];
-                    arr[minIndex] = temp;
+                    int tmp = arr[i];
+                    arr[i] = arr[minIdx];
+                    arr[minIdx] = tmp;
                 }
             }
         }
+        private bool EstaOrdenado(int[] arr)
+        {
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                if (arr[i] > arr[i + 1])
+                    return false;
+            }
+            return true;
+        }
+
+        private void btnMergeSort_Click(object sender, EventArgs e)
+        {
+            if (datos == null)
+            {
+                MessageBox.Show("Primero debe generar los números.");
+                return;
+            }
+
+            int[] copia = (int[])datos.Clone();
+            Stopwatch sw = Stopwatch.StartNew();
+
+            copia = MergeSortInts(copia);
+
+            if (!EstaOrdenado(copia))
+            {
+                MessageBox.Show("Error en el ordenamiento.");
+                return;
+            }
+
+            datos = copia;
+            MostrarV(datos);
+
+            sw.Stop();
+
+            lblTimeMerge.Text = $"Tiempo Merge: {sw.ElapsedMilliseconds} ms";
+
+        }
+
+        private int[] MergeSortInts(int[] arr)
+        {
+            if (arr.Length <= 1) return arr;
+
+            int mid = arr.Length / 2;
+            int[] left = arr.Take(mid).ToArray();
+            int[] right = arr.Skip(mid).ToArray();
+
+            left = MergeSortInts(left);
+
+            right = MergeSortInts(right);
+
+            return MergeInts()
+
+        }
+
 
 
 
