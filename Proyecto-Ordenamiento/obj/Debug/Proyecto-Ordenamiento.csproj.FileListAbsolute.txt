@@ -1,0 +1,11 @@
+C:\Users\inmo\Desktop\ProgramacionEstructurada\Proyecto-Ordenamiento\Proyecto-Ordenamiento\bin\Debug\Proyecto-Ordenamiento.exe.config
+C:\Users\inmo\Desktop\ProgramacionEstructurada\Proyecto-Ordenamiento\Proyecto-Ordenamiento\bin\Debug\Proyecto-Ordenamiento.exe
+C:\Users\inmo\Desktop\ProgramacionEstructurada\Proyecto-Ordenamiento\Proyecto-Ordenamiento\bin\Debug\Proyecto-Ordenamiento.pdb
+C:\Users\inmo\Desktop\ProgramacionEstructurada\Proyecto-Ordenamiento\Proyecto-Ordenamiento\obj\Debug\Proyecto-Ordenamiento.csproj.AssemblyReference.cache
+C:\Users\inmo\Desktop\ProgramacionEstructurada\Proyecto-Ordenamiento\Proyecto-Ordenamiento\obj\Debug\Proyecto_Ordenamiento.Form1.resources
+C:\Users\inmo\Desktop\ProgramacionEstructurada\Proyecto-Ordenamiento\Proyecto-Ordenamiento\obj\Debug\Proyecto_Ordenamiento.Properties.Resources.resources
+C:\Users\inmo\Desktop\ProgramacionEstructurada\Proyecto-Ordenamiento\Proyecto-Ordenamiento\obj\Debug\Proyecto-Ordenamiento.csproj.GenerateResource.cache
+C:\Users\inmo\Desktop\ProgramacionEstructurada\Proyecto-Ordenamiento\Proyecto-Ordenamiento\obj\Debug\Proyecto-Ordenamiento.csproj.CoreCompileInputs.cache
+C:\Users\inmo\Desktop\ProgramacionEstructurada\Proyecto-Ordenamiento\Proyecto-Ordenamiento\obj\Debug\Proyecto-Ordenamiento.exe
+C:\Users\inmo\Desktop\ProgramacionEstructurada\Proyecto-Ordenamiento\Proyecto-Ordenamiento\obj\Debug\Proyecto-Ordenamiento.pdb
+C:\Users\inmo\Desktop\ProgramacionEstructurada\Proyecto-Ordenamiento\Proyecto-Ordenamiento\obj\Debug\Proyecto-Ordenamiento.exe.config
