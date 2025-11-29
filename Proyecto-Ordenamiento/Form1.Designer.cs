@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblTiempoGenerar = new System.Windows.Forms.Label();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.cmbTamano = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -44,7 +45,6 @@
             this.btnInterpolSearch = new System.Windows.Forms.Button();
             this.btnJumpSearch = new System.Windows.Forms.Button();
             this.tbBuscar = new System.Windows.Forms.TextBox();
-            this.lblTiempoGenerar = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -64,6 +64,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tamaño de datos";
+            // 
+            // lblTiempoGenerar
+            // 
+            this.lblTiempoGenerar.AutoSize = true;
+            this.lblTiempoGenerar.Location = new System.Drawing.Point(809, 24);
+            this.lblTiempoGenerar.Name = "lblTiempoGenerar";
+            this.lblTiempoGenerar.Size = new System.Drawing.Size(135, 20);
+            this.lblTiempoGenerar.TabIndex = 2;
+            this.lblTiempoGenerar.Text = "lblTiempoGenerar";
             // 
             // btnGenerar
             // 
@@ -132,6 +141,7 @@
             this.btnSelectionSort.TabIndex = 0;
             this.btnSelectionSort.Text = "Selection Sort";
             this.btnSelectionSort.UseVisualStyleBackColor = true;
+            this.btnSelectionSort.Click += new System.EventHandler(this.btnSelectionSort_Click);
             // 
             // groupBox3
             // 
@@ -209,15 +219,6 @@
             this.tbBuscar.Name = "tbBuscar";
             this.tbBuscar.Size = new System.Drawing.Size(291, 26);
             this.tbBuscar.TabIndex = 0;
-            // 
-            // lblTiempoGenerar
-            // 
-            this.lblTiempoGenerar.AutoSize = true;
-            this.lblTiempoGenerar.Location = new System.Drawing.Point(809, 24);
-            this.lblTiempoGenerar.Name = "lblTiempoGenerar";
-            this.lblTiempoGenerar.Size = new System.Drawing.Size(135, 20);
-            this.lblTiempoGenerar.TabIndex = 2;
-            this.lblTiempoGenerar.Text = "lblTiempoGenerar";
             // 
             // Form1
             // 

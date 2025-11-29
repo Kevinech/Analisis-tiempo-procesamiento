@@ -3,6 +3,8 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using System.IO;
 using System.Linq;
+using System.Globalization;
+using System.Diagnostics.Eventing.Reader;
 
 namespace Proyecto_Ordenamiento
 {
@@ -48,7 +50,7 @@ namespace Proyecto_Ordenamiento
             swGen.Stop();
 
 
-            lblTiempoGenerar.Text = $"Tiempo generar: {swGen.ElapsedMilliseconds} ms";
+            lblTiempoGenerar.Text = $"Tiempo generar: {(swGen.ElapsedMilliseconds / 1000)} seg";
 
 
             lblTimeSelection.Text = "Tiempo Selection: ";
@@ -81,9 +83,60 @@ namespace Proyecto_Ordenamiento
            
             for (int i = 0; i < arr.Length; i++)
             {
-                lbVista.Items.Add($"{i}: {arr[i]}");
+                lbVista.Items.Add($"{arr[i]}");
             }
         }
+
+        private void btnSelectionSort_Click(object sender, EventArgs e)
+        {
+
+            
+
+            if (datos == null)
+            {
+                MessageBox.Show("Primero debe generar los números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+          
+            int[] copia = (int[])datos.Clone();
+
+            Stopwatch sw = Stopwatch.StartNew();
+            
+            SelectionSort(copia);
+
+            datos = copia;
+            MostrarV(datos);
+
+            sw.Stop();
+
+            lblTimeSelection.Text = $"Tiempo Selection: {(sw.ElapsedMilliseconds / 1000)} seg";
+        }
+
+        private void SelectionSort(int[] arr)
+        {
+            int n = arr.Length;
+
+            for (int i = 0; i < n - 1; i++)
+            {
+                int minIndex = i;
+                for (int j = i + 1; j < n; j++)
+                {
+                    if (arr[j] < arr[minIndex])
+                    {
+                        minIndex = j;
+                    }
+                }
+                if (minIndex != i)
+                {
+                    int temp = arr[1];
+                    arr[1] = arr[minIndex];
+                    arr[minIndex] = temp;
+                }
+            }
+        }
+
+
+
     }
 }
 
