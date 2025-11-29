@@ -252,22 +252,24 @@ namespace Proyecto_Ordenamiento
 
             lblTimeJump.Text = $"Tiempo Jump: {sw.ElapsedMilliseconds} ms";
 
+            string resultado = "JUMP SEARCH - ";
+            
 
             if (idx >= 0)
             {
-                string resultado = $"JUMP SEARCH - ENCONTRADO\n\n" +
-                                  $"Número buscado: {target}\n" +
-                                  $"Índice encontrado: {idx}\n" +
-                                  $"Valor en índice: {datos[idx]}\n" +
-                                  $"Tiempo: {sw.ElapsedMilliseconds} ms\n";
+                 resultado += $"ENCONTRADO\n\n" +
+                 $"Número buscado: {target}\n" +
+                 $"Índice encontrado: {idx}\n" +
+                 $"Valor en índice: {datos[idx]}\n" +
+                 $"Tiempo: {sw.ElapsedMilliseconds} ms\n";
                 GetMostrarR(resultado, System.Drawing.Color.Green);
             }
             else
             {
-                string resultado = $"JUMP SEARCH - NO ENCONTRADO\n\n" +
-                                  $"Número buscado: {target}\n" +
-                                  $"Resultado: No existe en el arreglo\n" +
-                                  $"Tiempo: {sw.ElapsedMilliseconds} ms\n";
+                resultado = $"NO ENCONTRADO\n\n" +
+                $"Número buscado: {target}\n" +
+                $"Resultado: No existe en el arreglo\n" +
+                $"Tiempo: {sw.ElapsedMilliseconds} ms\n";
                 GetMostrarR(resultado, System.Drawing.Color.Red);
             }
 
@@ -336,21 +338,24 @@ namespace Proyecto_Ordenamiento
 
             lblTimeInterpol.Text = $"Tiempo Inter: {sw.ElapsedMilliseconds} ms";
 
+            string resultado = "INTERPOLATION SEARCH -";
+
+
             if (idx >= 0)
             {
-                string resultado = $"✓ BINARY SEARCH - ENCONTRADO\n\n" +
-                                  $"Número buscado: {target}\n" +
-                                  $"Índice encontrado: {idx}\n" +
-                                  $"Valor en índice: {datos[idx]}\n" +
-                                  $"Tiempo: {sw.ElapsedMilliseconds} ms\n";
+                resultado += $" ENCONTRADO\n\n" +
+                $"Número buscado: {target}\n" +
+                $"Índice encontrado: {idx}\n" +
+                $"Valor en índice: {datos[idx]}\n" +
+                $"Tiempo: {sw.ElapsedMilliseconds} ms\n";
                 GetMostrarR(resultado, System.Drawing.Color.Green);
             }
             else
             {
-                string resultado = $"✗ BINARY SEARCH - NO ENCONTRADO\n\n" +
-                                  $"Número buscado: {target}\n" +
-                                  $"Resultado: No existe en el arreglo\n" +
-                                  $"Tiempo: {sw.ElapsedMilliseconds} ms\n";
+                resultado += $"NO ENCONTRADO\n\n" +
+                $"Número buscado: {target}\n" +
+                $"Resultado: No existe en el arreglo\n" +
+                $"Tiempo: {sw.ElapsedMilliseconds} ms\n";
                 GetMostrarR(resultado, System.Drawing.Color.Red);
 
             }

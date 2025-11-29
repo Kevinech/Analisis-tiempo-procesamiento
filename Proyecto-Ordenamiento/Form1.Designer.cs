@@ -183,7 +183,7 @@
             // lblTimeInterpol
             // 
             this.lblTimeInterpol.AutoSize = true;
-            this.lblTimeInterpol.Location = new System.Drawing.Point(348, 138);
+            this.lblTimeInterpol.Location = new System.Drawing.Point(293, 138);
             this.lblTimeInterpol.Name = "lblTimeInterpol";
             this.lblTimeInterpol.Size = new System.Drawing.Size(112, 20);
             this.lblTimeInterpol.TabIndex = 4;
@@ -192,7 +192,7 @@
             // lblTimeJump
             // 
             this.lblTimeJump.AutoSize = true;
-            this.lblTimeJump.Location = new System.Drawing.Point(85, 138);
+            this.lblTimeJump.Location = new System.Drawing.Point(25, 138);
             this.lblTimeJump.Name = "lblTimeJump";
             this.lblTimeJump.Size = new System.Drawing.Size(97, 20);
             this.lblTimeJump.TabIndex = 3;
@@ -258,6 +258,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ordenamientos";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
