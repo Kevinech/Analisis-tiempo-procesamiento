@@ -45,10 +45,13 @@
             this.btnInterpolSearch = new System.Windows.Forms.Button();
             this.btnJumpSearch = new System.Windows.Forms.Button();
             this.tbBuscar = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.rtbBusqueda = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -212,6 +215,7 @@
             this.btnJumpSearch.TabIndex = 1;
             this.btnJumpSearch.Text = "Jump Search";
             this.btnJumpSearch.UseVisualStyleBackColor = true;
+            this.btnJumpSearch.Click += new System.EventHandler(this.btnJumpSearch_Click);
             // 
             // tbBuscar
             // 
@@ -221,12 +225,31 @@
             this.tbBuscar.Size = new System.Drawing.Size(291, 26);
             this.tbBuscar.TabIndex = 0;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.rtbBusqueda);
+            this.groupBox5.Location = new System.Drawing.Point(692, 386);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(495, 150);
+            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Resultados de busqueda";
+            // 
+            // rtbBusqueda
+            // 
+            this.rtbBusqueda.Location = new System.Drawing.Point(7, 25);
+            this.rtbBusqueda.Name = "rtbBusqueda";
+            this.rtbBusqueda.Size = new System.Drawing.Size(482, 118);
+            this.rtbBusqueda.TabIndex = 0;
+            this.rtbBusqueda.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -242,6 +265,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -265,6 +289,8 @@
         private System.Windows.Forms.Label lblTimeInterpol;
         private System.Windows.Forms.Label lblTimeJump;
         private System.Windows.Forms.Label lblTiempoGenerar;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.RichTextBox rtbBusqueda;
     }
 }
 

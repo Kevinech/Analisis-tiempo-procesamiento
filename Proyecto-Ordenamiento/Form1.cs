@@ -13,7 +13,7 @@ namespace Proyecto_Ordenamiento
 
         private int[] datos;
         private readonly Random rnd = new Random();
-        
+
 
 
         public Form1()
@@ -28,24 +28,24 @@ namespace Proyecto_Ordenamiento
             lblTimeMerge.Text = "Tiempo Merge: ";
             lblTimeJump.Text = "Tiempo Jump: ";
             lblTimeInterpol.Text = "Tiempo Interpolation: ";
-            
-            
+
+
         }
 
 
-        
+
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
 
             int n = int.Parse(cmbTamano.SelectedItem.ToString());
 
-           
+
             Stopwatch swGen = Stopwatch.StartNew();
 
             datos = GetPalabrasR(n, 1, 1_000_000);
 
-            MostrarV(datos);
+            GetMostrarV(datos);
 
             swGen.Stop();
 
@@ -75,20 +75,20 @@ namespace Proyecto_Ordenamiento
 
         }
 
-        private void MostrarV(int[] arr)
+        private void GetMostrarV(int[] arr)
         {
-        
+
             lbVista.Items.Clear();
             if (arr == null) return;
 
-            int max = Math.Min(arr.Length, 1000); 
+            int max = Math.Min(arr.Length, 1000);
             for (int i = 0; i < max; i++)
             {
-                lbVista.Items.Add(arr[i]);   
+                lbVista.Items.Add(arr[i]);
             }
         }
 
-        
+
 
         private void btnSelectionSort_Click(object sender, EventArgs e)
         {
@@ -103,11 +103,11 @@ namespace Proyecto_Ordenamiento
             Stopwatch sw = Stopwatch.StartNew();
             SelectionSort(copia);
 
-            bool ok = EstaOrdenado(copia);
+            bool ok = GetEstaOrdenado(copia);
             MessageBox.Show(ok ? "Ordenado correctamente" : "Hay un error en el ordenamiento");
 
             datos = copia;
-            MostrarV(datos);
+            GetMostrarV(datos);
 
             sw.Stop();
 
@@ -136,7 +136,7 @@ namespace Proyecto_Ordenamiento
                 }
             }
         }
-        private bool EstaOrdenado(int[] arr)
+        private bool GetEstaOrdenado(int[] arr)
         {
             for (int i = 0; i < arr.Length - 1; i++)
             {
@@ -157,16 +157,16 @@ namespace Proyecto_Ordenamiento
             int[] copia = (int[])datos.Clone();
             Stopwatch sw = Stopwatch.StartNew();
 
-            copia = MergeSortInts(copia);
+            copia = GetMergeSortInts(copia);
 
-            if (!EstaOrdenado(copia))
+            if (!GetEstaOrdenado(copia))
             {
                 MessageBox.Show("Error en el ordenamiento.");
                 return;
             }
 
             datos = copia;
-            MostrarV(datos);
+            GetMostrarV(datos);
 
             sw.Stop();
 
@@ -174,7 +174,7 @@ namespace Proyecto_Ordenamiento
 
         }
 
-        private int[] MergeSortInts(int[] arr)
+        private int[] GetMergeSortInts(int[] arr)
         {
             if (arr.Length <= 1) return arr;
 
@@ -182,15 +182,15 @@ namespace Proyecto_Ordenamiento
             int[] left = arr.Take(mid).ToArray();
             int[] right = arr.Skip(mid).ToArray();
 
-            left = MergeSortInts(left);
+            left = GetMergeSortInts(left);
 
-            right = MergeSortInts(right);
+            right = GetMergeSortInts(right);
 
-            return MergeInts(left, right);
+            return GetMergeInts(left, right);
 
         }
 
-        private int[] MergeInts(int[] left, int[] right)
+        private int[] GetMergeInts(int[] left, int[] right)
         {
 
             int[] result = new int[left.Length + right.Length];
@@ -223,9 +223,122 @@ namespace Proyecto_Ordenamiento
             return result;
         }
 
+        private void btnJumpSearch_Click(object sender, EventArgs e)
+        {
+            if (datos == null)
+            {
+                MessageBox.Show("Primero debe generar los números.");
+                return;
+
+            }
+
+            if (!GetEstaOrdenado(datos))
+            {
+                MessageBox.Show("Primero debes ordenar los datos (Selection Sort o Merge Sort).");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(tbBuscar.Text) || !int.TryParse(tbBuscar.Text, out int target))
+            {
+                MessageBox.Show("Ingrese un número válido a buscar.");
+                return;
+            }
+
+            Stopwatch sw = Stopwatch.StartNew();
+
+            int idx = GetJumpSearch(datos, target);
+
+            sw.Stop();
+
+            
+
+            if (idx >= 0)
+            {
+                string resultado = $"JUMP SEARCH - ENCONTRADO\n\n" +
+                                  $"Número buscado: {target}\n" +
+                                  $"Índice encontrado: {idx}\n" +
+                                  $"Valor en índice: {datos[idx]}\n" +
+                                  $"Tiempo: {sw.ElapsedMilliseconds} ms\n";
+                GetMostrarR(resultado, System.Drawing.Color.Green);
+            }
+            else
+            {
+                string resultado = $"JUMP SEARCH - NO ENCONTRADO\n\n" +
+                                  $"Número buscado: {target}\n" +
+                                  $"Resultado: No existe en el arreglo\n" +
+                                  $"Tiempo: {sw.ElapsedMilliseconds} ms\n";
+                GetMostrarR(resultado, System.Drawing.Color.Red);
+            }
+
+
+
+        }
+
+
+
+
+        private int GetJumpSearch(int[] arr, int target)
+        {
+            int n = arr.Length;
+            int step = (int)Math.Sqrt(n);
+            int prev = 0;
+
+            while (prev < n && arr[Math.Min(step, n) -1] < target)
+            {
+                prev = step;
+                step += (int)Math.Sqrt(n);
+                if (prev >= n) return -1;
+            }
+
+            while (prev < Math.Min(step, n) && arr[prev] < target)
+            {
+                prev++;
+            }
+
+            if (prev < n && arr[prev] == target)
+            {
+                return prev;
+            }
+            return -1;
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void GetMostrarR(string texto, System.Drawing.Color color)
+        {
+            
+            if (rtbBusqueda.Text.Length > 0)
+                rtbBusqueda.AppendText("\n" + new string('=', 50) + "\n\n");
+
+            rtbBusqueda.SelectionColor = color;
+            rtbBusqueda.SelectionFont = new System.Drawing.Font("Arial", 10, System.Drawing.FontStyle.Bold);
+            rtbBusqueda.AppendText(texto);
+
+  
+            rtbBusqueda.SelectionStart = rtbBusqueda.Text.Length;
+            rtbBusqueda.ScrollToCaret();
+        }
+
+
+
+
 
 
 
     }
 }
-
