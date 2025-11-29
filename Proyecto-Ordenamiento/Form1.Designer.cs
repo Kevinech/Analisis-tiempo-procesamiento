@@ -109,7 +109,7 @@
             // lblTimeMerge
             // 
             this.lblTimeMerge.AutoSize = true;
-            this.lblTimeMerge.Location = new System.Drawing.Point(380, 62);
+            this.lblTimeMerge.Location = new System.Drawing.Point(303, 62);
             this.lblTimeMerge.Name = "lblTimeMerge";
             this.lblTimeMerge.Size = new System.Drawing.Size(103, 20);
             this.lblTimeMerge.TabIndex = 3;
@@ -128,7 +128,7 @@
             // lblTimeSelection
             // 
             this.lblTimeSelection.AutoSize = true;
-            this.lblTimeSelection.Location = new System.Drawing.Point(51, 62);
+            this.lblTimeSelection.Location = new System.Drawing.Point(26, 62);
             this.lblTimeSelection.Name = "lblTimeSelection";
             this.lblTimeSelection.Size = new System.Drawing.Size(124, 20);
             this.lblTimeSelection.TabIndex = 1;

@@ -186,8 +186,41 @@ namespace Proyecto_Ordenamiento
 
             right = MergeSortInts(right);
 
-            return MergeInts()
+            return MergeInts(left, right);
 
+        }
+
+        private int[] MergeInts(int[] left, int[] right)
+        {
+
+            int[] result = new int[left.Length + right.Length];
+            int i = 0, j = 0, k = 0;
+
+
+            while (i < left.Length && j < right.Length)
+            {
+                if (left[i] <= right[j])
+                {
+                    result[k++] = left[i++];
+                }
+                else
+                {
+                    result[k++] = right[j++];
+                }
+            }
+
+            while (i < left.Length)
+            {
+                result[k++] = left[i++];
+            }
+
+            while (j < right.Length)
+            {
+                result[k++] = right[j++];
+            }
+
+
+            return result;
         }
 
 
