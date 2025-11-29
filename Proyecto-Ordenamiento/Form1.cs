@@ -250,7 +250,8 @@ namespace Proyecto_Ordenamiento
 
             sw.Stop();
 
-            
+            lblTimeJump.Text = $"Tiempo Jump: {sw.ElapsedMilliseconds} ms";
+
 
             if (idx >= 0)
             {
@@ -305,17 +306,89 @@ namespace Proyecto_Ordenamiento
 
         }
 
+        private void btnInterpolSearch_Click(object sender, EventArgs e)
+        {
+
+            if (datos == null)
+            {
+                MessageBox.Show("Primero debe generar los números.");
+                return;
+            }
+
+            if (!GetEstaOrdenado(datos))
+            {
+                MessageBox.Show("Primero debes ordenar los datos (Selection Sort o Merge Sort).");
+                return;
+            }
+
+
+            if (string.IsNullOrWhiteSpace(tbBuscar.Text) || !int.TryParse(tbBuscar.Text, out int target))
+            {
+                MessageBox.Show("Ingrese un número válido a buscar.");
+                return;
+            }
+
+            Stopwatch sw = Stopwatch.StartNew();
+
+            int idx = GetInterSearch(datos, target);
+
+            sw.Stop();
+
+            lblTimeInterpol.Text = $"Tiempo Inter: {sw.ElapsedMilliseconds} ms";
+
+            if (idx >= 0)
+            {
+                string resultado = $"✓ BINARY SEARCH - ENCONTRADO\n\n" +
+                                  $"Número buscado: {target}\n" +
+                                  $"Índice encontrado: {idx}\n" +
+                                  $"Valor en índice: {datos[idx]}\n" +
+                                  $"Tiempo: {sw.ElapsedMilliseconds} ms\n";
+                GetMostrarR(resultado, System.Drawing.Color.Green);
+            }
+            else
+            {
+                string resultado = $"✗ BINARY SEARCH - NO ENCONTRADO\n\n" +
+                                  $"Número buscado: {target}\n" +
+                                  $"Resultado: No existe en el arreglo\n" +
+                                  $"Tiempo: {sw.ElapsedMilliseconds} ms\n";
+                GetMostrarR(resultado, System.Drawing.Color.Red);
+
+            }
+
+        }
+
+
+        private int GetInterSearch(int[] arr, int target)
+        {
+            int low = 0;
+            int high = arr.Length - 1;
+
+            while (low <= high && target >= arr[low] && target <= arr[high])
+            {
+                int pos = low + (int)((double)(target - arr[low]) / (arr[high] - arr[low] * (high - low)));
+
+                if (arr[pos] == target)
+                {
+                    return pos;
+                }
+                   
+
+                if (arr[pos] < target)
+                {
+                    low = pos + 1;
+                }
+                else
+                {
+                    high = pos - 1;
+                }
 
 
 
 
+            }
+            return -1;
 
-
-
-
-
-
-
+        }
 
 
 
@@ -334,11 +407,6 @@ namespace Proyecto_Ordenamiento
             rtbBusqueda.ScrollToCaret();
         }
 
-
-
-
-
-
-
+       
     }
 }

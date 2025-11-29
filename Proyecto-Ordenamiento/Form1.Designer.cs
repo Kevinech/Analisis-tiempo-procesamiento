@@ -206,6 +206,7 @@
             this.btnInterpolSearch.TabIndex = 2;
             this.btnInterpolSearch.Text = "Interpol Search";
             this.btnInterpolSearch.UseVisualStyleBackColor = true;
+            this.btnInterpolSearch.Click += new System.EventHandler(this.btnInterpolSearch_Click);
             // 
             // btnJumpSearch
             // 
